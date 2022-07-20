@@ -4,8 +4,12 @@ using namespace std;
 struct Node
 {
     int data;
-    Node* next;
-    Node(int x) {  data = x;  next = NULL; }
+    Node *next;
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
 };
 
 Node *first = NULL;
@@ -46,6 +50,6 @@ int main(int argc, char const *argv[])
     insertAtEnd(3);
     insertAtEnd(4);
     insertAtEnd(1);
-    cout<<getCount(first);
+    cout << getCount(first);
     return 0;
 }
