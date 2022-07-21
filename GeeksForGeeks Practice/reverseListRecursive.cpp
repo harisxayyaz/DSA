@@ -38,6 +38,7 @@ Node *reverseList(Node *head)
 {
     if (head == NULL)
     {
+        tempHead->next = NULL;
         return tempHead;
     }
     else
@@ -45,7 +46,11 @@ Node *reverseList(Node *head)
         tempHead = head;
         reverseList(head->next);
     }
-    if (tempHead->next == NULL)
+    if (tempHead==head)
+    {
+        return tempHead;
+    }
+    else if (tempHead->next == NULL)
     {
         lastPointer = head;
         tempHead->next = lastPointer;
@@ -72,8 +77,8 @@ void print(Node *head)
 int main(int argc, char const *argv[])
 {
     insertAtEnd(1);
-    insertAtEnd(2);
-    insertAtEnd(3);
+    // insertAtEnd(2);
+    // insertAtEnd(3);
     print(first);
     cout << endl;
     Node *reverse = reverseList(first);
