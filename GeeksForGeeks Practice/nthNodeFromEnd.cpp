@@ -45,6 +45,7 @@ void print()
 int count = 0;
 int total = 0;
 int ret = -1;
+
 int getNthFromLast(Node *head, int n)
 {
     int val = count;
