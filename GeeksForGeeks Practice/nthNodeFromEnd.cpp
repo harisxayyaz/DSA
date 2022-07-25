@@ -42,34 +42,35 @@ void print()
     }
 }
 
-int count = 1;
-int val = -1;
+int count = 0;
+int total = 0;
+int ret = -1;
 int getNthFromLast(Node *head, int n)
 {
-    if (head == NULL)
+    int val = count;
+    if (!head)
     {
-        count = 1;
-        val = -1;
-        return -1;
+        total = count;
     }
-    else
+    else{
+        count++; 
+        getNthFromLast(head->next,n);
+    }
+    if ((total-val)==n)
     {
-        getNthFromLast(head->next, n);
+        ret = head->data;
     }
-    if (count==n)
-    {
-        val = head->data;
-    }
-        count++;
-        return val;
+    return ret;
 }
+
 int main(int argc, char const *argv[])
 {
-    insertAtEnd(78);
-    insertAtEnd(5);
-    insertAtEnd(23);
+    insertAtEnd(667);
+    insertAtEnd(299);
+    insertAtEnd(35);
+    insertAtEnd(664);
     print();
     cout<<endl;
-    cout<<getNthFromLast(first,2);
+    cout<<getNthFromLast(first,6);
     return 0;
 }
